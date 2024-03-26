@@ -33,15 +33,28 @@ createApp({
                 }
             ],
             activeElement: 'active',
+
+            
         }
     },
 
     mounted(){
-        console.log('funziona?')
+        setInterval(() => {
+            if(this.currentObjectIndex !== this.slides.length - 1){
+                this.currentObjectIndex++;
+            }else{
+                this.currentObjectIndex = 0;
+            }
+        }, 1 * 3000)
     },
 
     methods:{
-       
+
+        nextImg(){
+            
+            
+
+        },
 
     }
 
