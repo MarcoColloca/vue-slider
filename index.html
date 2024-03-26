@@ -28,20 +28,21 @@
                 
                 <!-- Sezione dell'aside dello Slider -->
                 <div class="thumbs">
+                    <!-- Pulsante per andare all'immagine precedente -->
                     <div 
                     class="prev"
                     v-for="(currentObject, i) in slides"
                     @click="currentObjectIndex !== 0 ? currentObjectIndex-- : currentObjectIndex = slides.length - 1"                
                     ></div>
 
+                    <!-- Pulsante per andare all'immagine successiva -->
                     <div 
                     class="next"
                     v-for="(currentObject, i) in slides"
-                    @click="currentObjectIndex !== slides.length - 1 ? currentObjectIndex++ : currentObjectIndex = 0"                
-
-                    
+                    @click="currentObjectIndex !== slides.length - 1 ? currentObjectIndex++ : currentObjectIndex = 0"                                   
                     ></div>
 
+                    <!-- immagini dentro il thumb -->
                     <div 
                     class="thumb" 
                     v-for="(currentObject, i) in slides" 
