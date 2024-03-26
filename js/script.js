@@ -33,37 +33,50 @@ createApp({
                 }
             ],
             activeElement: 'active',
-
-            
+            intervalId: null,
         }
     },
 
     mounted(){
-        setInterval(() => {
+        this.intervalId = setInterval(() => {
             if(this.currentObjectIndex !== this.slides.length - 1){
                 this.currentObjectIndex++;
             }else{
                 this.currentObjectIndex = 0;
             }
-        }, 1 * 3000)
+
+        }, 1000);               
     },
 
     methods:{
 
-        nextImg(){
-            
-            
-
+        startSlider() {
+            if (this.intervalId === null) {
+                // Fammi partire l'autointerval
+                console.log('Riparte');
+                this.intervalId = setInterval(() => {
+                    if(this.currentObjectIndex !== this.slides.length - 1){
+                        this.currentObjectIndex++;
+                    }else{
+                        this.currentObjectIndex = 0;
+                    }
+        
+                }, 1000);
+            }
         },
 
-    }
+        pauseSlider(){
+            if (this.intervalId !== null) {
+                clearInterval(this.intervalId);
+                this.intervalId = null;
+            }
+        },
+
+    },
+
+
 
 }).mount('#app')
-
-
-
-
-
 
 
 
