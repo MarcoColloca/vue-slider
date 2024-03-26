@@ -111,3 +111,11 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     left: 50%;
     transform: translate(-50%) rotate(135deg);
 }
+
+
+.title{
+    position: absolute;
+    top: 50px;
+    font-size: 100px;
+    color:rgb(51, 44, 70);
+}

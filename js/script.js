@@ -36,6 +36,9 @@ createApp({
         }
     },
 
+    mounted(){
+        console.log('funziona?')
+    },
 
     methods:{
        
