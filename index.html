@@ -32,7 +32,11 @@
 
                     <div class="next"></div>
 
-                    <div class="thumb" v-for="(currentObject, i) in slides" :class="i === currentObjectIndex ? 'active' : '' ">
+                    <div 
+                     class="thumb" v-for="(currentObject, i) in slides" 
+                     :class="i === currentObjectIndex ? 'active' : '' "
+                     @click="currentObjectIndex = i"
+                    >
                         <img :src="currentObject.image" alt="spiderman">
                     </div>
                     
