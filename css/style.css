@@ -78,6 +78,12 @@
     bottom: 0;
 }
 
+
+.prev:hover, 
+.next:hover{
+    background-color: rgb(255, 187, 0);
+}
+
 /*
 EXTRA: in questo esempio gli accordion vengono creati
 usando 2 bordi di un quadratino ruotato di 45 gradi

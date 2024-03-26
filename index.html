@@ -28,14 +28,25 @@
                 
                 <!-- Sezione dell'aside dello Slider -->
                 <div class="thumbs">
-                    <div class="prev"></div>
-
-                    <div class="next"></div>
+                    <div 
+                    class="prev"
+                    v-for="(currentObject, i) in slides"
+                    @click="currentObjectIndex !== 0 ? currentObjectIndex-- : currentObjectIndex = slides.length - 1"                
+                    ></div>
 
                     <div 
-                     class="thumb" v-for="(currentObject, i) in slides" 
-                     :class="i === currentObjectIndex ? 'active' : '' "
-                     @click="currentObjectIndex = i"
+                    class="next"
+                    v-for="(currentObject, i) in slides"
+                    @click="currentObjectIndex !== slides.length - 1 ? currentObjectIndex++ : currentObjectIndex = 0"                
+
+                    
+                    ></div>
+
+                    <div 
+                    class="thumb" 
+                    v-for="(currentObject, i) in slides" 
+                    :class="i === currentObjectIndex ? 'active' : '' "
+                    @click="currentObjectIndex = i"
                     >
                         <img :src="currentObject.image" alt="spiderman">
                     </div>
