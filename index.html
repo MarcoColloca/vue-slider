@@ -17,11 +17,11 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
                 <!-- Sezione delle immagini dello Slider -->
-                <div class="item" v-for="(currentObject, i) in slides" :class="i === currentObjectIndex ? 'active' : '' ">
-                    <img :src="currentObject.image" alt="spiderman">
+                <div class="item">
+                    <img :src="slides[currentObjectIndex].image" alt="">
                     <div class="text">
-                        <h3>{{currentObject.title}}</h3>
-                        <p>{{currentObject.text}}</p>
+                        <h3>{{slides[currentObjectIndex].title}}</h3>
+                        <p>{{slides[currentObjectIndex].text}}</p>
                     </div>
                 </div>
 
