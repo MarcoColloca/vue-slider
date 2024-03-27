@@ -8,7 +8,6 @@
     <title>Slider</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
-
 </head>
 
 <body>
@@ -17,14 +16,12 @@
         <div class="container">
             <h1 class="title">(ง•̀_•́)ง</h1>
 
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" @mouseover="pauseSlider()" @mouseleave="startSlider()">
                 <!-- Sezione delle immagini dello Slider -->
                 <div class="item">
                     <img 
                     :src="slides[currentObjectIndex].image" 
                     alt=""
-                    @mouseover="pauseSlider()"
-                    @mouseleave="startSlider()"
                     >
                     <!-- @mouseleave="this.autoSlider" -->
 
@@ -43,8 +40,6 @@
                     class="prev"
                     v-for="(currentObject, i) in slides"
                     @click="currentObjectIndex !== 0 ? currentObjectIndex-- : currentObjectIndex = slides.length - 1"
-                    @mouseover="pauseSlider()"
-                    @mouseleave="startSlider()"                
                     ></div>
 
                     <!-- Pulsante per andare all'immagine successiva -->
@@ -52,8 +47,6 @@
                     class="next"
                     v-for="(currentObject, i) in slides"
                     @click="currentObjectIndex !== slides.length - 1 ? currentObjectIndex++ : currentObjectIndex = 0"
-                    @mouseover="pauseSlider()"
-                    @mouseleave="startSlider()"
                     ></div>
 
                     <!-- immagini dentro il thumb -->
@@ -62,8 +55,6 @@
                     v-for="(currentObject, i) in slides" 
                     :class="i === currentObjectIndex ? 'active' : '' "
                     @click="currentObjectIndex = i"
-                    @mouseover="pauseSlider()"
-                    @mouseleave="startSlider()"
                     >
                         <img :src="currentObject.image" alt="spiderman">
                     </div>                    
