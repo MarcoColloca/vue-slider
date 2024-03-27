@@ -71,6 +71,14 @@ createApp({
                 this.intervalId = null;
             }
         },
+
+        prevSlide(){
+            if(this.currentObjectIndex === 0){
+                this.currentObjectIndex = this.slides.length - 1
+            } else {
+                this.currentObjectIndex--
+            }
+        },
     },
 }).mount('#app')
 

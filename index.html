@@ -39,8 +39,11 @@
                     <div 
                     class="prev"
                     v-for="(currentObject, i) in slides"
-                    @click="currentObjectIndex !== 0 ? currentObjectIndex-- : currentObjectIndex = slides.length - 1"
+                    @click="prevSlide()"
                     ></div>
+                    <!-- @click="currentObjectIndex !== 0 ? currentObjectIndex-- : currentObjectIndex = slides.length - 1" -->
+
+
 
                     <!-- Pulsante per andare all'immagine successiva -->
                     <div 
