@@ -45,7 +45,7 @@ createApp({
                 this.currentObjectIndex = 0;
             }
 
-        }, 1000);               
+        }, 3000);               
     },
 
     methods:{
@@ -61,7 +61,7 @@ createApp({
                         this.currentObjectIndex = 0;
                     }
         
-                }, 1000);
+                }, 3000);
             }
         },
 
@@ -71,11 +71,7 @@ createApp({
                 this.intervalId = null;
             }
         },
-
     },
-
-
-
 }).mount('#app')
 
 
